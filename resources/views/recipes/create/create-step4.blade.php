@@ -2,7 +2,10 @@
 
 @section('content')
 
-<!doctype html>
+@include('master.navbar')
+
+
+    <!doctype html>
 <html lang="en">
 <head>
 

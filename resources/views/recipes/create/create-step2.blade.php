@@ -2,11 +2,14 @@
 
 @section('content')
 
+    @include('master.navbar')
+
+    <hr>
     <h1 class="text-center">Step 2- Add Recipe Image</h1>
     <hr>
-    @if(isset($recipe->productImg))
-        Product Image:
-        <img alt="Product Image" src="/storage/productimg/{{$product->productImg}}"/>
+    @if(isset($recipe->recipeImg))
+        Recipe Image:
+        <img alt="Recipe Image" src="/storage/recipeImg/{{$recipe->recipeImg}}"/>
     @endif
     <form action="/recipes/create-step2" method="post">
 

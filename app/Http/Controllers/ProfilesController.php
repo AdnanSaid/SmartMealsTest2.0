@@ -76,16 +76,16 @@ class ProfilesController extends Controller
         return redirect("/profile/{$user->id}");
     }
 
-    public function show($user_id)
-    {
-        $user = User::find(1);
-        $user_profile = Profile::info($user_id)->first();
-        return view('profiles.show', compact('profile', 'user'));
-    }
-
-    public function profile()
-    {
-        return $this->hasOne('Profile');
-    }
-
+//    public function show($user_id)
+//    {
+//        $user = User::find(1);
+//        $user_profile = Profile::info($user_id)->first();
+//        return view('profiles.show', compact('profile', 'user'));
+//    }
+//
+//    public function profile()
+//    {
+//        return $this->hasOne('Profile');
+//    }
+//
 }

@@ -4,7 +4,15 @@
     <option name="languageLevel" value="ES6" />
   </component>
   <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/SiteWideSearchController.php" />
+    <file url="file://$PROJECT_DIR$/app/Http/Resources/SiteSearchResource.php" />
     <file url="file://$PROJECT_DIR$/database/seeds/CategoriesTableSeeder.php" />
     <file url="file://$PROJECT_DIR$/database/seeds/SubcategoriesTableSeeder.php" />
+    <file url="file://$PROJECT_DIR$/resources/views/layouts/nav2.blade.php" />
+    <file url="file://$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" />
+    <file url="file://$PROJECT_DIR$/resources/views/recipes/create/create-step1.blade.php" />
+    <file url="file://$PROJECT_DIR$/resources/views/recipes/create/create-step2.blade.php" />
+    <file url="file://$PROJECT_DIR$/resources/views/recipes/create/create-step3.blade.php" />
+    <file url="file://$PROJECT_DIR$/resources/views/recipes/create/create-step4.blade.php" />
   </component>
 </project>

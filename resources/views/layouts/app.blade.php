@@ -32,18 +32,48 @@
 
 <body>
 
-    <div id="navBar1">
+    <div id="navBar">
 
         <nav class="navbar navbar-expand-md navbar-light" style="background-color: #2a9055;">
             <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <div><img src=png/SmartMealsLogo.png style="height: 100px", class= "pr-3"></div>
+                <a class="navbar-brand d-flex" href="{{ url('/home') }}">
+                    <div><img src=png/SmartMealsLogo.png style="height: 100px", class= "pr-3" alt=""></div>
                     <div class="pt-5" style="color: whitesmoke;font-size: 28px;">SmartMeals</div>
-
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse pt-5" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach($categories as $category)
+                                    <a class="dropdown-item" href="#">{{$category -> name}}</a>
+                                @endforeach
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0 pb-3">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -90,6 +120,7 @@
                         @endguest
                     </ul>
                 </div>
+            </div>
             </div>
 
         </nav>

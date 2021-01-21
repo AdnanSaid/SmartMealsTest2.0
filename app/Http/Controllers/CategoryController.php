@@ -22,9 +22,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
 
-        return View::make('index', compact('categories'));
+        return view ('category.index');
+
 //        $categories = Category::with('children')->whereNull('parent_id')->get();
 //
 //        return view('categories.index')->with([
@@ -37,8 +37,6 @@ class CategoryController extends Controller
 //        $categories = Category::with('subcategories')->get();
 //
 //        return view('categories.index',compact('categories'));
-
-
 
     }
 
