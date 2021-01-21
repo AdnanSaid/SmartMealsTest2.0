@@ -2,6 +2,9 @@
 
 @section('content')
 
+    @include('master.navbar')
+
+    <hr>
     <h1 class="text-center">Step 2- Add Recipe Image</h1>
     <hr>
     @if(isset($recipe->productImg))

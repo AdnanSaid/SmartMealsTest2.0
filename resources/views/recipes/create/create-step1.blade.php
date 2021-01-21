@@ -2,6 +2,9 @@
 
 @section('content')
 
+    @include('master.navbar')
+
+    <hr>
     <h1 class="text-center">Step 1- Add New Recipe</h1>
     <hr>
     <form action="/recipes/create-step1" method="post">

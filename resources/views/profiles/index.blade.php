@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @include('master.navbar')
+
     <div class="container">
         <div class="row">
             <div class="col-3 p-5">
@@ -101,10 +104,12 @@
         <div class="row pt-5">
             @foreach($user->posts as $post)
                 <div class="col-4 pb-4">
-                        <img src="{{ asset(Storage::url($post->image)) }}" class="w-100">
+                    <a href="/p/{{ $post->id }}">
+                        <img src="/storage/{{ $post->image }}" class="w-100">
+                    </a>
                 </div>
-        @endforeach
-
-    </div>
+            @endforeach
+        </div>
 </div>
 @endsection
+

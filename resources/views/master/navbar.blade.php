@@ -20,12 +20,13 @@
                     Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-{{--                   @foreach($categories as $category)--}}
-{{--                    <a class="dropdown-item" href="#">{{$category -> name}}</a>--}}
-{{--                    @endforeach--}}
-                    <a class="dropdown-item" href="#"></a>
+                   @foreach($categories as $category)
+                    <a class="dropdown-item" href="#">{{$category -> name}}</a>
+                        @endforeach
                 </div>
             </li>
+
+
 
         </ul>
         <form class="form-inline my-2 my-lg-0">

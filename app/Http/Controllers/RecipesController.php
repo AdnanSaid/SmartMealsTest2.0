@@ -21,7 +21,7 @@ class RecipesController extends Controller
     {
         $recipe = $request->session()->get('recipe');
 
-        return view('recipes.create-step1',compact('recipe', $recipe));    }
+        return view('recipes.create.create-step1',compact('recipe', $recipe));    }
 
     /**
      * Post Request to store step1 info in session
@@ -58,47 +58,34 @@ class RecipesController extends Controller
     public function createStep2(Request $request)
     {
         $recipe = $request->session()->get('recipe');
-        return view('recipes.create-step2',compact('recipe', $recipe));
+        return view('recipes.create.create-step2',compact('recipe', $recipe));
     }
 
     /**
      * Post Request to store step2 info in session
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function postCreateStep2(Request $request)
     {
         $recipe = $request->session()->get('recipe');
-        if(!isset($recipe->productImg)) {
+        if(!isset($recipe->recipeImg)) {
             $request->validate([
                 'recipeimg' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
 
             $fileName = "recipeImage-" . time() . '.' . request()->recipeimg->getClientOriginalExtension();
 
-            $request->recipeimg->storeAs('recipeimg', $fileName);
+            $request->recipeImg->storeAs('recipeImg', $fileName);
 
-            $product = $request->session()->get('recipe');
+            $recipe = $request->session()->get('recipe');
 
-            $product->recipeImg = $fileName;
+            $recipe->recipeImg = $fileName;
             $request->session()->put('recipe', $recipe);
         }
         return redirect('/recipes/create-step3');
 
-    }
-
-    /**
-     * Show the Product Review page
-     *
-     * @param Request $request
-     * @return Application|Factory|View
-     */
-    public function removeImage(Request $request)
-    {
-        $recipe = $request->session()->get('recipe');
-        $recipe->recipeImg = null;
-        return view('recipes.create-step2',compact('product', $recipe));
     }
 
     /**
@@ -111,7 +98,7 @@ class RecipesController extends Controller
     {
         $recipe = $request->session()->get('recipe');
 
-        return view('recipes.create-step3',compact('recipe', $recipe));
+        return view('recipes.create.create-step3',compact('recipe', $recipe));
     }
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SubcategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +32,7 @@ Route::get('dashboard/profile', 'ProfilesController@show');
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/categories', 'CategoryController@index');
 
 Route::get('/', 'PostsController@index');
 Route::get('/p/create', 'PostsController@create');
@@ -48,8 +51,8 @@ Route::prefix('/recipes')->group(function () {
     Route::post('/remove-image', 'RecipesController@removeImage');
 });
 
-
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
 Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
+
 
