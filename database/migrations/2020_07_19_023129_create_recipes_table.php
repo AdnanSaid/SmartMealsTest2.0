@@ -14,17 +14,29 @@ class CreateRecipesTable extends Migration
     public function up()
     {
         Schema::create('recipes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->BigIncrements('id');
             $table->string('title'); // a simple string
-            $table->string('preptime');
             $table->mediumText('description'); //medium height text
+            $table->string('image'); // this is for the image, we just want the name as a string
+            $table->string('prep_time');
+            $table->string('cook_time');
+            $table->string('servings');
+            $table->string('difficulty');
+            $table->string('calorie');
+            $table->string('fat');
+            $table->string('saturates');
+            $table->string('carbs');
+            $table->string('sugars');
+            $table->string('fibre');
+            $table->string('protein');
+            $table->string('salt');
             $table->mediumText('ingredients');
-            $table->longText('preparation');// long height text
-            $table->string('cover'); // this is for the image, we just want the name as a string
+            $table->longText('steps');// long height text
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id');
-
+            $table->unsignedBigInteger('subcategories_id');
+            $table->unsignedBigInteger('categories_id');
 
         });
     }

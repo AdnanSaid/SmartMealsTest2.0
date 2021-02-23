@@ -14,5 +14,6 @@
     <file url="file://$PROJECT_DIR$/resources/views/recipes/create/create-step2.blade.php" />
     <file url="file://$PROJECT_DIR$/resources/views/recipes/create/create-step3.blade.php" />
     <file url="file://$PROJECT_DIR$/resources/views/recipes/create/create-step4.blade.php" />
+    <file url="file://$PROJECT_DIR$/resources/views/recipes/style.css" />
   </component>
 </project>

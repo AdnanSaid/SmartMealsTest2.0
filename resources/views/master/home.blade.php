@@ -5,6 +5,7 @@
 
     <!DOCTYPE html>
 <head>
+
     <style>
         * {
             box-sizing: border-box;
@@ -99,7 +100,9 @@
             }
         }
     </style>
+
 </head>
+
 <bbody>
 
     <div class="row">
